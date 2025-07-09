@@ -1,0 +1,43 @@
+.content {
+  padding: 2rem;
+  background-color: #eef3f7;
+  min-height: 70vh;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #1a3c5a;
+}
+
+.content-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+  margin: 1rem 0;
+}
+
+.content p {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 1rem auto;
+  max-width: 700px;
+}
+
+.content-list {
+  text-align: left;
+  list-style: decimal inside;
+  margin: 1.5rem auto;
+  max-width: 600px;
+  padding: 0;
+}
+
+.content-list li {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
