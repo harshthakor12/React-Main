@@ -1,0 +1,135 @@
+/* Hero Section */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6f42c1, #6610f2);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6f42c1, #6610f2);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-content {
+  max-width: 1100px;
+}
+
+.hero-cards {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+/* Card Styling */
+.hero-cards .card {
+  background-color: #ffffff;
+  color: #333;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.hero-cards .card:hover {
+  transform: translateY(-5px);
+}
+
+/* Extra Block Below Button */
+.hero-extra {
+  margin-top: 3rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+}
+
+/* Stats Section */
+.hero-stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.stat-box {
+  min-width: 120px;
+  margin: 1rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 1rem;
+  border-radius: 8px;
+  backdrop-filter: blur(3px);
+}
+
+.stat-box h4 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.stat-box p {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+}
+.topbar h3 {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.kartik {
+  margin-top: 10px;
+}
+
+.kartik a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.kartik a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.footer-section {
+  background-color: #343a40;
+  color: white;
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+/* === Footer Section Styling === */
+.footer-section {
+  background-color: #343a40;
+  color: #ffffff;
+  padding: 1.5rem 0;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-section p {
+  margin: 0;
+  font-size: 1rem;
+}
+.course-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.course-item img {
+  max-height: 50px;
+  object-fit: contain;
+}
