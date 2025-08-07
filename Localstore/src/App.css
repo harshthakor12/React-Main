@@ -1,0 +1,53 @@
+/* App.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(90deg, #f8ff00 0%, #3ad59f 100%);
+  margin: 0;
+  padding: 0;
+}
+
+form {
+  background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+button[type="submit"] {
+  background-color: #ffc400;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #38dd17;
+}
