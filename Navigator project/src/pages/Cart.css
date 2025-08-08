@@ -1,0 +1,87 @@
+/* === Shared Form Container === */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000000;
+  margin: 0;
+  padding: 0;
+}
+.form-container {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 50px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #0700b8 0%, #00ff88 100%);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Headings */
+.form-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+/* === Input Fields === */
+.form-container input,
+.form-container textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.form-container input:focus,
+.form-container textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+}
+
+/* === Textarea Customization === */
+.form-container textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* === Buttons === */
+.form-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff9500;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.form-container button:hover {
+  background-color: #68b300;
+}
+
+.form-container button:active {
+  transform: scale(0.98);
+}
+
+/* === Extra for Consistency === */
+.form-container .form-footer {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.form-container .form-footer a {
+  color: #00ff3c;
+  text-decoration: none;
+}
+
+.form-container .form-footer a:hover {
+  text-decoration: underline;
+}

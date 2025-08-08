@@ -1,0 +1,94 @@
+/* Product Page Wrapper */
+.product-page {
+  padding: 30px 20px;
+  text-align: center;
+  background-color: #000000;
+  min-height: 100vh;
+}
+
+/* Product Grid Layout */
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* Product Card */
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  width: 240px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
+.product-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.product-card h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  height: 45px;
+  overflow: hidden;
+}
+
+/* Buttons inside product card */
+.product-card button {
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  margin: 5px 3px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card button:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Price + input styling */
+.product-card input[type="number"] {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 6px;
+  width: 80px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-card {
+    width: 90%;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+}
