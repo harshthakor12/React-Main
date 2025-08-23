@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Component/Navbar";
 import "./Product.css";
+import { useAuth } from "../components/AuthContext"; // ✅ import auth
 
 const Product = () => {
+  const { user } = useAuth(); // ✅ get logged-in user
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
   const [editingId, setEditingId] = useState(null);
   const [editPrice, setEditPrice] = useState("");
 
@@ -18,17 +21,17 @@ const Product = () => {
       })
       .catch((err) => {
         console.error("Failed to fetch products", err);
+        setError("❌ Failed to load products.");
         setLoading(false);
       });
   }, []);
 
   // Save updated price
   const handleSavePrice = (id) => {
-    const updatedProduct = products.find((p) => p.id === id);
-    const newProductData = { ...updatedProduct, price: parseFloat(editPrice) };
+    const newProductData = { price: parseFloat(editPrice) };
 
     fetch(`http://localhost:3000/products/${id}`, {
-      method: "PUT",
+      method: "PATCH", // only update price
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newProductData),
     })
@@ -61,61 +64,72 @@ const Product = () => {
       <Navbar />
       <div className="product-page">
         <h1>Our Products</h1>
-        {loading ? (
-          <p>Loading products...</p>
-        ) : products.length === 0 ? (
-          <p>No products available.</p>
-        ) : (
-          <div className="product-grid">
-            {products.map((product) => (
-              <div className="product-card" key={product.id}>
-                <img src={product.image} alt={product.title} />
-                <h3>{product.title}</h3>
 
-                {editingId === product.id ? (
-                  <>
-                    <input
-                      type="number"
-                      value={editPrice}
-                      onChange={(e) => setEditPrice(e.target.value)}
-                    />
-                    <button onClick={() => handleSavePrice(product.id)}>
-                      Save
-                    </button>
-                  </>
-                ) : (
-                  <>
-                    <p>Price: ${product.price}</p>
-                    <button
-                      onClick={() => {
-                        setEditingId(product.id);
-                        setEditPrice(product.price);
-                      }}
-                    >
-                      Edit Price
-                    </button>
-                  </>
-                )}
+        {loading && <p>Loading products...</p>}
+        {error && <p className="error">{error}</p>}
 
-                {/* Delete button */}
-                <button
-                  style={{
-                    marginTop: "10px",
-                    backgroundColor: "red",
-                    color: "white",
-                    padding: "5px 10px",
-                    border: "none",
-                    borderRadius: "4px",
-                    cursor: "pointer",
-                  }}
-                  onClick={() => handleDeleteProduct(product.id)}
-                >
-                  Delete
-                </button>
-              </div>
-            ))}
-          </div>
-        )}
+        {!loading &&
+          !error &&
+          (products.length === 0 ? (
+            <p>No products available.</p>
+          ) : (
+            <div className="product-grid">
+              {products.map((product) => (
+                <div className="product-card" key={product.id}>
+                  <img src={product.image} alt={product.title} />
+                  <h3>{product.title}</h3>
+                  <p className="description">{product.description}</p>
+
+                  {editingId === product.id ? (
+                    <div className="edit-section">
+                      <input
+                        type="number"
+                        value={editPrice}
+                        onChange={(e) => setEditPrice(e.target.value)}
+                      />
+                      <button
+                        className="btn save"
+                        onClick={() => handleSavePrice(product.id)}
+                      >
+                        Save
+                      </button>
+                      <button
+                        className="btn cancel"
+                        onClick={() => setEditingId(null)}
+                      >
+                        Cancel
+                      </button>
+                    </div>
+                  ) : (
+                    <>
+                      <p>Price: ${product.price}</p>
+
+                      {/* ✅ Only logged-in users see Edit/Delete */}
+                      {user && (
+                        <>
+                          <button
+                            className="btn edit"
+                            onClick={() => {
+                              setEditingId(product.id);
+                              setEditPrice(product.price);
+                            }}
+                          >
+                            Edit Price
+                          </button>
+                          <button
+                            className="btn delete"
+                            onClick={() => handleDeleteProduct(product.id)}
+                          >
+                            Delete
+                          </button>
+                        </>
+                      )}
+                    </>
+                  )}
+                </div>
+              ))}
+            </div>
+          ))}
       </div>
     </>
   );
