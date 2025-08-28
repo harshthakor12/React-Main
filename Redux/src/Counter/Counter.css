@@ -1,0 +1,69 @@
+/* Counter.css */
+
+.counter-container {
+  text-align: center;
+  margin-top: 50px;
+  font-family: Arial, sans-serif;
+}
+
+.counter-container h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+.counter-container h1 {
+  font-size: 48px;
+  color: #df5911;
+  margin-bottom: 30px;
+}
+.counter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.counter-buttons button {
+  background: #4caf50;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.counter-buttons button:hover {
+  background: #45a049;
+}
+
+.counter-input {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.counter-input input {
+  width: 100px;
+  padding: 8px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.counter-input button {
+  background: #f021f3;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.counter-input button:hover {
+  background: #1976d2;
+}
